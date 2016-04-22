@@ -16,6 +16,32 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/motorola/kinzie/kinzie-vendor.mk)
+# This file includes all definitions that apply to ALL kinzie devices, and
+# are also specific to kinzie devices
+#
+# Everything in this directory will become public
+
+# System properties
+include $(LOCAL_PATH)/system_prop.mk
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config \
+    $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/etc/msm_irqbalance.conf
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/qcril.db:system/etc/motorola/qcril.db
+
+# Input device files for kinzie
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermanager.xml:system/etc/thermanager.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/qmi_config.xml:system/etc/data/qmi_config.xml \
+    $(LOCAL_PATH)/configs/dsi_config.xml:system/etc/data/dsi_config.xml \
+    $(LOCAL_PATH)/configs/netmgr_config.xml:system/etc/data/netmgr_config.xml
 
 # Audio
 PRODUCT_COPY_FILES += \

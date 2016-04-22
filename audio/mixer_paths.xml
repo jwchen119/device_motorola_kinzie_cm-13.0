@@ -14,11 +14,13 @@
 	<ctl name="Voip Tx Mute" id="1" value="500" />
 	<ctl name="Voip Rx Gain" id="0" value="0" />
 	<ctl name="Voip Rx Gain" id="1" value="20" />
+	<ctl name="IN1L Volume" value="18" />
 	<ctl name="IN1R Volume" value="16" />
 	<ctl name="IN2L Volume" value="18" />
 	<ctl name="IN2R Volume" value="18" />
 	<ctl name="IN3L Volume" value="18" />
 	<ctl name="IN3R Volume" value="18" />
+	<ctl name="IN1L Digital Volume" value="128" />
 	<ctl name="IN1R Digital Volume" value="142" />
 	<ctl name="IN2L Digital Volume" value="128" />
 	<ctl name="IN2R Digital Volume" value="128" />
@@ -29,19 +31,21 @@
 	<ctl name="SLIMTX1 Input 1" value="None" />
 	<ctl name="SLIMTX2 Input 1" value="None" />
 	<ctl name="AIF1TX1 Input 1" value="None" />
-	<ctl name="AIF1TX1 Input 2" value="None" />
-	<ctl name="AIF1TX1 Input 2 Volume" value="0" />
 	<ctl name="AIF1TX2 Input 1" value="None" />
 	<ctl name="SLIMTX5 Input 1" value="None" />
 	<ctl name="HPOUT1L Input 1" value="None" />
 	<ctl name="HPOUT1R Input 1" value="None" />
-	<ctl name="EQ1 Input 1" value="None" />
-	<ctl name="EQ1 Input 1 Volume" value="0" />
-	<ctl name="EQ1 Mode Switch" value="0" />
+	<ctl name="HPOUT2L Input 1" value="None" />
+	<ctl name="HPOUT2L Input 2" value="None" />
+	<ctl name="HPOUT2L Input 2 Volume" value="0" />
 	<ctl name="HPOUT1 Digital Volume" id="0" value="0" />
 	<ctl name="HPOUT1 Digital Volume" id="1" value="0" />
+	<ctl name="HPOUT2 Digital Volume" id="0" value="0" />
+	<ctl name="HPOUT2 Digital Volume" id="1" value="0" />
 	<ctl name="HPOUT1 Digital Switch" id="0" value="0" />
 	<ctl name="HPOUT1 Digital Switch" id="1" value="0" />
+	<ctl name="HPOUT2 Digital Switch" id="0" value="0" />
+	<ctl name="HPOUT2 Digital Switch" id="1" value="0" />
 	<ctl name="Voip Mode Config" value="12" />
 	<ctl name="Voip Rate Config" value="0" />
 	<ctl name="Voip Evrc Min Max Rate Config" id="0" value="1" />
@@ -103,6 +107,7 @@
 	<ctl name="SLIM0_RX_VI_FB_LCH_MUX" value="ZERO" />
 	<ctl name="SLIM_0_RX Channels" value="One" />
 	<ctl name="SLIM_0_TX Channels" value="One" />
+	<ctl name="SLIM_1_TX Channels" value="One" />
 	<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="0" />
 	<ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="0" />
 	<ctl name="PRI_MI2S_RX Audio Mixer MultiMedia4" value="0" />
@@ -167,12 +172,6 @@
 	<ctl name="SLIMBUS_DL_HL Switch" value="0" />
 	<ctl name="MultiMedia1 Mixer PRI_MI2S_TX" value="0" />
 	<ctl name="MultiMedia2 Mixer PRI_MI2S_TX" value="0" />
-	<ctl name="TFA9890 earpiece mode" value="Off" />
-	<ctl name="NXP DISABLE Spkr Left Prot" value="0" />
-	<ctl name="Left SPK Mux" value="On" />
-	<ctl name="Right SPK Mux" value="On" />
-	<ctl name="NXP Left Ch Select" value="1" />
-	<ctl name="NXP Right Ch Select" value="2" />
 	<!-- fm end -->
 
 	<!-- Voice -->
@@ -688,6 +687,11 @@
 		<ctl name="SLIMTX1 Input 1" value="IN2R" />
 	</path>
 
+	<path name="mic5">
+		<path name="AOV" />
+		<ctl name="SLIMTX1 Input 1" value="IN1L" />
+	</path>
+
 	<path name="primary-mic">
 		<path name="mic1" />
 	</path>
@@ -704,12 +708,6 @@
 		<ctl name="SLIM_0_RX Channels" value="Two" />
 		<ctl name="AIF1TX1 Input 1" value="SLIMRX1" />
 		<ctl name="AIF1TX2 Input 1" value="SLIMRX2" />
-		<!-- Select Left channel on Left IC bypass mode -->
-		<ctl name="NXP Left Ch Select" value="1" />
-		<!-- Select Right channel on Right IC bypass mode -->
-		<ctl name="NXP Right Ch Select" value="2" />
-		<!-- Disable earpiece mode -->
-		<ctl name="TFA9890 earpiece mode" value="Off" />
 	</path>
 
 	<path name="speaker-reverse">
@@ -722,21 +720,21 @@
 		<ctl name="NXP Right Ch Select" value="1" />
 		<!-- Disable earpiece mode -->
 		<ctl name="TFA9890 earpiece mode" value="Off" />
+=======
+>>>>>>> b8ac54f... Try to fix audio config on calls
 	</path>
 
 	<path name="speaker-mic">
-		<path name="mic2" />
+		<path name="mic5" />
 	</path>
 
 	<path name="handset">
 		<ctl name="SLIM_0_RX Channels" value="One" />
-		<!-- Enable earpiece mode this toggles gpio -->
-		<ctl name="TFA9890 earpiece mode" value="On" />
-		<ctl name="NXP DISABLE Spkr Left Prot" value="1" />
-		<ctl name="AIF1TX1 Input 1" value="SLIMRX1" />
-		<!-- select (l + r)/2 -->
-		<ctl name="NXP Left Ch Select" value="3" />
-		<ctl name="Right SPK Mux" value="Off" />
+		<ctl name="HPOUT2L Input 1" value="SLIMRX1" />
+		<ctl name="HPOUT2 Digital Volume" id="0" value="128" />
+		<ctl name="HPOUT2 Digital Volume" id="1" value="128" />
+		<ctl name="HPOUT2 Digital Switch" id="0" value="1" />
+		<ctl name="HPOUT2 Digital Switch" id="1" value="1" />
 	</path>
 
 	<path name="handset-mic">
@@ -747,8 +745,8 @@
 		<ctl name="SLIM_0_RX Channels" value="Two" />
 		<ctl name="HPOUT1L Input 1" value="SLIMRX1" />
 		<ctl name="HPOUT1R Input 1" value="SLIMRX2" />
-		<ctl name="HPOUT1 Digital Volume" id="0" value="116" />
-		<ctl name="HPOUT1 Digital Volume" id="1" value="116" />
+		<ctl name="HPOUT1 Digital Volume" id="0" value="114" />
+		<ctl name="HPOUT1 Digital Volume" id="1" value="114" />
 		<ctl name="HPOUT1 Digital Switch" id="0" value="1" />
 		<ctl name="HPOUT1 Digital Switch" id="1" value="1" />
 	</path>
@@ -757,7 +755,7 @@
 		<path name="headphones" />
 		<ctl name="HPOUT1 Digital Volume" id="0" value="128" />
 		<ctl name="HPOUT1 Digital Volume" id="1" value="128" />
-		</path>
+	</path>
 
 	<path name="headset-mic">
 		<path name="AOV" />
@@ -767,15 +765,31 @@
 	</path>
 
 	<path name="sidetone-handset">
-		<ctl name="EQ1 Input 1" value="IN3L" />
-		<ctl name="EQ1 Input 1 Volume" value="12" />
-		<ctl name="EQ1 Mode Switch" value="1" />
-		<ctl name="AIF1TX1 Input 2" value="EQ1" />
-		<ctl name="AIF1TX1 Input 2 Volume" value="12" />
+		<ctl name="HPOUT2L Input 2" value="IN3L" />
+		<ctl name="HPOUT2L Input 2 Volume" value="7" />
 	</path>
 
 	<path name="voice-handset">
 		<path name="sidetone-handset" />
+		<path name="handset" />
+	</path>
+
+	<path name="voice-anc-handset">
+		<path name="sidetone-handset" />
+		<ctl name="RXANCL Input" value="IN2L" />
+		<ctl name="RXANC NG Source" value="Internal" />
+		<ctl name="HPOUT2L ANC Source" value="RXANCL" />
+		<ctl name="DSP4L Input 1" value="ISRC1DEC2" />
+		<ctl name="DSP4 Aux 2" value="ISRC1DEC1" />
+		<ctl name="DSP4 Aux 3" value="ISRC1DEC3" />
+		<ctl name="DSP4 Aux 5" value="ISRC2DEC2" />
+		<ctl name="ISRC1DEC1 Input" value="IN3L" />
+		<ctl name="ISRC1DEC2 Input" value="IN2L" />
+		<ctl name="ISRC1DEC3 Input" value="IN3R" />
+		<ctl name="ISRC2DEC2 Input" value="IN1L" />
+		<ctl name="DSP4 Rate" value="SYNCCLK rate 2" />
+		<ctl name="DSP4 Firmware" value="Rx ANC" />
+		<ctl name="DSP4 Virtual Output Mux" value="DSP4" />
 		<path name="handset" />
 	</path>
 
@@ -818,10 +832,6 @@
 		<ctl name="SLIM_0_RX Channels" value="Two" />
 		<ctl name="AIF1TX1 Input 1" value="SLIMRX1" />
 		<ctl name="AIF1TX2 Input 1" value="SLIMRX2" />
-		<ctl name="NXP Left Ch Select" value="3" />
-		<ctl name="NXP Right Ch Select" value="3" />
-		<!-- Disable earpiece mode -->
-		<ctl name="TFA9890 earpiece mode" value="Off" />
 	</path>
 
 	<path name="speaker-and-line">
