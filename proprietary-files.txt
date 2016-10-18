@@ -80,18 +80,6 @@ etc/firmware/left.tfa9890_n1b12.patch
 etc/firmware/left.tfa9890_n1c2.patch
 etc/firmware/left.tfa9890_ringtone_table.preset
 etc/firmware/left.tfa9890_voice_table.preset
-etc/firmware/right.tfa9890.music.config
-etc/firmware/right.tfa9890.music.eq
-etc/firmware/right.tfa9890.ringtone.config
-etc/firmware/right.tfa9890.ringtone.eq
-etc/firmware/right.tfa9890.speaker
-etc/firmware/right.tfa9890.voice.config
-etc/firmware/right.tfa9890.voice.eq
-etc/firmware/right.tfa9890_music_table.preset
-etc/firmware/right.tfa9890_n1b12.patch
-etc/firmware/right.tfa9890_n1c2.patch
-etc/firmware/right.tfa9890_ringtone_table.preset
-etc/firmware/right.tfa9890_voice_table.preset
 etc/firmware/vrgain.bin
 
 # Bluetooth
@@ -125,7 +113,7 @@ etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
 etc/permissions/com.motorola.camera.xml
 etc/permissions/com.motorola.gallery.xml
-lib/hw/camera.msm8992.so:lib/hw/camera.vendor.msm8992.so
+lib/hw/camera.msm8994.so:lib/hw/camera.vendor.msm8994.so
 lib/libmot_lux_standardization.so
 lib/libadvalgcore.so
 lib/libAisAdapter.so
@@ -288,16 +276,16 @@ vendor/lib64/libqti-iop-client.so
 # DM/Sprint
 -app/DMConfigUpdateLight/DMConfigUpdateLight.apk
 -app/HiddenMenuLight/HiddenMenuLight.apk
-etc/permissions/com.android.omadm.service.xml
-etc/sysconfig/whitelist_com.android.omadm.service.xml
-lib/libdmengine.so
-lib/libdmjavaplugin.so
+-etc/permissions/com.android.omadm.service.xml
+-etc/sysconfig/whitelist_com.android.omadm.service.xml
+-lib/libdmengine.so
+-lib/libdmjavaplugin.so
 -priv-app/CQATest/CQATest.apk
 -priv-app/ConnMO/ConnMO.apk
 -priv-app/DCMO/DCMO.apk
 -priv-app/DMService/DMService.apk
-lib/libdmengine.so:priv-app/DMService/lib/arm/libdmengine.so
-lib/libdmjavaplugin.so:priv-app/DMService/lib/arm/libdmjavaplugin.so
+-lib/libdmengine.so:priv-app/DMService/lib/arm/libdmengine.so
+-lib/libdmjavaplugin.so:priv-app/DMService/lib/arm/libdmjavaplugin.so
 -priv-app/DiagMon/DiagMon.apk
 -priv-app/LifetimeData/LifetimeData.apk
 -priv-app/SprintDM/SprintDM.apk
@@ -568,26 +556,26 @@ bin/rmt_storage
 vendor/bin/qti
 etc/diag_mdlog/Bluetooth_V1.cfg
 etc/diag_mdlog/Bluetooth_audio_V1.cfg
-etc/diag_mdlog/Connection_Issues_V8_wifi.cfg
-etc/diag_mdlog/Connection_Issues_V9.cfg
-etc/diag_mdlog/Connection_Issues_V9_wifi.cfg
-etc/diag_mdlog/FIT_V18_1.cfg
-etc/diag_mdlog/FIT_V18_2_volte_full_ip.cfg
-etc/diag_mdlog/FIT_V18_3_audio.cfg
-etc/diag_mdlog/GNSS_SUPL_V5.cfg
-etc/diag_mdlog/GNSS_V4.cfg
+-etc/diag_mdlog/Connection_Issues_V8_wifi.cfg
+-etc/diag_mdlog/Connection_Issues_V9.cfg
+-etc/diag_mdlog/Connection_Issues_V9_wifi.cfg
+-etc/diag_mdlog/FIT_V18_1.cfg
+-etc/diag_mdlog/FIT_V18_2_volte_full_ip.cfg
+-etc/diag_mdlog/FIT_V18_3_audio.cfg
+-etc/diag_mdlog/GNSS_SUPL_V5.cfg
+-etc/diag_mdlog/GNSS_V4.cfg
 etc/diag_mdlog/Vzw_Connection_Issues_V1.cfg
 etc/diag_mdlog/WLAN_V1.cfg
 etc/diag_mdlog/default.cfg
 etc/diag_mdlog/default.opts
-etc/permissions/com.verizon.ims.xml
-etc/permissions/ims.xml
+-etc/permissions/com.verizon.ims.xml
+-etc/permissions/ims.xml
 etc/permissions/org.simalliance.openmobileapi.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 framework/qcnvitems.jar
 framework/qcrilhook.jar
-framework/com.verizon.ims.jar
+-framework/com.verizon.ims.jar
 framework/org.simalliance.openmobileapi.jar
 lib/libmdmcutback.so
 lib64/libmdmcutback.so
@@ -619,20 +607,20 @@ vendor/lib64/libxml.so
 vendor/lib64/libqcmaputils.so
 
 # Touchscreen firmware
-etc/firmware/synaptics-s2726-15052160-1d19d9-clark.tdat
-etc/firmware/synaptics-s3528-15071401-1e29b4-clark.tdat
-etc/firmware/synaptics-s3528ar-15071401-1e29b4-clark.tdat
+etc/firmware/synaptics-s3528-15070602-1def27-kinzie.tdat
+etc/firmware/synaptics-s3528ks-14102100-1a96a7-kinzie.tdat
+etc/firmware/synaptics-s3528ks2-15070602-1def27-kinzie.tdat
 
 # Sensors
 bin/motosh
 etc/firmware/sensorhubfw.bin
-lib/hw/sensors.msm8992.so
-lib64/hw/sensors.msm8992.so
+lib/hw/sensors.msm8994.so
+lib64/hw/sensors.msm8994.so
 vendor/lib/libsubsystem_control.so
 vendor/lib64/libsubsystem_control.so
 vendor/lib/libSubSystemShutdown.so
 vendor/lib64/libSubSystemShutdown.so
-lib64/hw/sensorhub.msm8992.so
+lib64/hw/sensorhub.msm8994.so
 vendor/lib/libsensor1.so
 vendor/lib64/libsensor1.so
 

@@ -61,8 +61,8 @@ on boot
     chown system system /sys/class/graphics/fb0/cabc_mode
 
     # update foreground cpuset now that processors are up
-    write /dev/cpuset/foreground/cpus 0-5
-    write /dev/cpuset/foreground/boost/cpus 4-5
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/boost/cpus 4-7
     write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-3
 
@@ -145,6 +145,10 @@ on boot
     write /data/misc/radio/copy_complete 1
 
 on post-fs
+
+    mkdir /cache/logs 0775 system log
+    start persistentLogging
+
     mkdir /persist/camera 02755 mot_tcmd mot_tcmd
     mkdir /persist/camera/ledcal 0755 camera mot_tcmd
     mkdir /persist/factory 0755 mot_tcmd mot_tcmd
@@ -638,3 +642,8 @@ service thermanager /system/bin/thermanager /system/etc/thermanager.xml
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
+
+service persistentLogging /system/bin/logcat -r 1024 -n 9 -v threadTime -f /cache/logs/log
+    user system
+    group system log
+    disabled
