@@ -53,6 +53,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_BLUETOOTH_BDROID_HCILP_INCLUDED := false
+BOARD_BLUEDROID_VENDOR_CONF := $(DEVICE_PATH)/bluetooth/libbt_vndcfg.txt
 BOARD_HAS_QCA_BT_ROME := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
@@ -78,7 +79,8 @@ ENABLE_CPUSETS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 41943040
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 805306368
-BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 25832587264
+BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 42024960
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 4294967296
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -104,13 +106,14 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
+TARGET_USES_QCOM_BSP := true
 
 # Headers
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 earlyprintk=msm_hsl_uart,0xf991e000 utags.blkdev=/dev/block/bootdevice/by-name/utags utags.backup=/dev/block/bootdevice/by-name/utagsBackup boot_cpus=0-5
+BOARD_KERNEL_CMDLINE :=console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 earlyprintk=msm_hsl_uart,0xf991e000 utags.blkdev=/dev/block/bootdevice/by-name/utags utags.backup=/dev/block/bootdevice/by-name/utagsBackup boot_cpus=0-7
 BOARD_KERNEL_PAGESIZE :=  4096
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100

@@ -69,7 +69,7 @@ void vendor_load_properties()
             property_set("ro.build.description", "kinzie_reteu-user 6.0 MPK24.78-8 10 release-keys");
             property_set("ro.build.fingerprint", "motorola/kinzie_reteu/kinzie:6.0/MPK24.78-8/10:user/release-keys");
             property_set("ro.fsg-id", "emea");
-        } else if (strstr(car, "retbr")) || (strstr(car, "retla"){
+        } else if (strstr(car, "retbr") || strstr(car, "retla")) {
             /* Brazil -- LATAM*/
             setLatMsim();
             property_set("ro.build.version.full","Blur_Version.24.11.8.kinzie_retla_ds.retla.en.01");
