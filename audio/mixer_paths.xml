@@ -720,8 +720,6 @@
 		<ctl name="NXP Right Ch Select" value="1" />
 		<!-- Disable earpiece mode -->
 		<ctl name="TFA9890 earpiece mode" value="Off" />
-=======
->>>>>>> b8ac54f... Try to fix audio config on calls
 	</path>
 
 	<path name="speaker-mic">
