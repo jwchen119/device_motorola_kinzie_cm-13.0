@@ -2,7 +2,7 @@
 
 set -e
 
-DEVICE=clark
+DEVICE=kinzie
 VENDOR=motorola
 
 # Load extractutils and do some sanity checks

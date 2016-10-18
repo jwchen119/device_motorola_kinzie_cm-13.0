@@ -1,5 +1,5 @@
 #
-# System Properties for Moto X Pure
+# System Properties for Moto X Force
 #
 
 # Audio
@@ -84,6 +84,7 @@ persist.mdpcomp_perfhint=50
 persist.mdpcomp.4k2kSplit=1
 persist.metadata_dynfps.disable=true
 ro.hwui.texture_cache_flushrate=0.4
+persist.panel.inversemounted=1
 ro.opengles.version=196609
 ro.sf.lcd_density=560
 

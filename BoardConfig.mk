@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/motorola/clark
+DEVICE_PATH := device/motorola/kinzie
 
 # Arch
 BOARD_VENDOR := motorola-qcom
@@ -116,7 +116,7 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := clark_defconfig
+TARGET_KERNEL_CONFIG := kinzie_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HAVE_EXFAT := true
 TARGET_KERNEL_HEADER_ARCH := arm64
@@ -131,8 +131,8 @@ TARGET_PER_MGR_ENABLED := true
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := msm8992
-TARGET_BOOTLOADER_BOARD_NAME := clark
+TARGET_BOARD_PLATFORM := msm8994
+TARGET_BOOTLOADER_BOARD_NAME := kinzie
 TARGET_NO_RADIOIMAGE := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_USES_64_BIT_BINDER := true
@@ -159,8 +159,8 @@ BOARD_SEPOLICY_DIRS += \
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_clark
-TARGET_RECOVERY_DEVICE_MODULES := libinit_clark
+TARGET_INIT_VENDOR_LIB := libinit_kinzie
+TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_kinzie.cpp
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
